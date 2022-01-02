@@ -1,0 +1,9 @@
+/OpenGL/.vs
+/OpenGL/Debug
+OpenGL.sln
+OpenGL.VC.db
+OpenGL.VC.VC.opendb
+/OpenGL/OpenGL/Debug
+/OpenGL/OpenGL/src
+/OpenGL/OpenGL/OpenGL.vcxproj
+/OpenGL/OpenGL/OpenGL.vcxproj.filters
