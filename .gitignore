@@ -6,3 +6,5 @@ OpenGL.VC.db
 /OpenGL/src
 /OpenGL/OpenGL.vcxproj
 /OpenGL/OpenGL.vcxproj.filters
+/OpenGL/OpenGL.*
+/OpenGL/.vs
