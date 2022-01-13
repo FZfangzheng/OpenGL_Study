@@ -5,7 +5,10 @@
 //#include"stb_image.h"
 //#define STB_IMAGE_IMPLEMENTATION
 //#include "stb_image.h"
-////加载纹理
+//#include <glm/glm.hpp>
+//#include <glm/gtc/matrix_transform.hpp>
+//#include <glm/gtc/type_ptr.hpp>
+////变换
 //void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 //void processInput(GLFWwindow *window);
 //
@@ -49,7 +52,7 @@
 //
 //	// build and compile our shader program
 //	// ------------------------------------
-//	Shader ourShader("shader_1_4.vs", "shader_1_4.fs");
+//	Shader ourShader("shader_1_5.vs", "shader_1_5.fs");
 //
 //	//纹理id
 //	unsigned int texture1, texture2;
@@ -154,6 +157,8 @@
 //	ourShader.use(); // 不要忘记在设置uniform变量之前激活着色器程序！
 //	glUniform1i(glGetUniformLocation(ourShader.ID, "texture1"), 0); // 手动设置
 //	ourShader.setInt("texture2", 1); // 或者使用着色器类设置
+//
+//
 //	while (!glfwWindowShouldClose(window))
 //	{
 //		// input
@@ -164,11 +169,15 @@
 //		// ------
 //		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 //		glClear(GL_COLOR_BUFFER_BIT);
-//
-//		
+//		//变换操作
+//		glm::mat4 trans;
+//		trans = glm::translate(trans, glm::vec3(0.5f, -0.5f, 0.0f));
+//		trans = glm::rotate(trans, (float)glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
+//		unsigned int transformLoc = glGetUniformLocation(ourShader.ID, "transform");
+//		glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
 //		//绑定纹理
 //		glActiveTexture(GL_TEXTURE0); // 在绑定纹理之前先激活纹理单元,GL_TEXTURE0默认激活
-//		glBindTexture(GL_TEXTURE_2D, texture1);
+//		glBindTexture(GL_TEXTURE_2D, texture1);	
 //		glActiveTexture(GL_TEXTURE1);
 //		glBindTexture(GL_TEXTURE_2D, texture2);
 //		// render the triangle
